@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+contract ErrorHandling {
+
+    // uint public number = 0;
+    uint b=12;
+
+    function testAssert(uint number) public pure{
+        assert(number!=0);
+    }
+
+    function divide(uint _numerator, uint _denominator) public pure returns (uint){
+        if(_numerator<_denominator){
+
+            revert("Please print numerator is greater than denominator");
+
+        }
+        return _numerator/_denominator;
+
+
+    }
+    function mult(uint a) public view returns (uint){
+        require(a>0,"Value of a is zero , we don't want the result to be zero");
+        return a*b;
+
+    }
